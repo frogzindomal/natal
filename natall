@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Natal Vitória</title>
+  <style>
+    /* Fundo azul marinho */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #0b1d51;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+
+    /* Texto central */
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* Container das imagens */
+    .images {
+      display: flex;
+      gap: 20px;
+      z-index: 10;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .images img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid white;
+      background-color: #fff;
+    }
+
+    /* Frases abaixo das imagens */
+    .message {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      z-index: 10;
+      position: relative;
+    }
+
+    .signature {
+      font-size: 1.2em;
+      font-style: italic;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* Estrelas */
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      width: 2px;
+      height: 2px;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    /* Flocos de neve */
+    .flake {
+      position: absolute;
+      top: -10px;
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎄 Feliz Natal Vitória 🎄</h1>
+
+  <div class="images">
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnB2dWFsMjJ4OHN1b25qdG00MzR1ZWIybHA3YWlweHV2em5vaDRjZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mATqoqwcLzqNKkLcOR/giphy.gif" alt="Árvore de Natal">
+    <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YzB4M2I2bHN5dmI1NnEzNW5iNXc3MG5sejJ0cDEzcWd5cDI1Z3I3NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gg2gpEcuKXA16VZZtR/giphy.gif" alt="Papai Noel">
+    <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ajM5YXhtN2xvemY3MW16aXhxYm1ud3B5MmFsZGZ6aXBhZnN5eTdoOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hrvT7O29X0GI1PeQch/giphy.gif" alt="Presente">
+  </div>
+
+  <div class="message">O seu melhor presente de Natal sou eu</div>
+  <div class="signature">Ass: Leo G</div>
+
+  <script>
+    // Criar estrelas
+    const numStars = 100;
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = Math.random() * window.innerHeight + 'px';
+      star.style.left = Math.random() * window.innerWidth + 'px';
+      star.style.width = Math.random() * 3 + 1 + 'px';
+      star.style.height = star.style.width;
+      star.style.animationDuration = 1 + Math.random() * 2 + 's';
+      document.body.appendChild(star);
+    }
+
+    // Criar flocos de neve
+    const numFlakes = 50;
+    for (let i = 0; i < numFlakes; i++) {
+      const flake = document.createElement('div');
+      flake.classList.add('flake');
+      flake.style.left = Math.random() * window.innerWidth + 'px';
+      flake.style.animationDuration = 5 + Math.random() * 5 + 's';
+      flake.style.width = flake.style.height = 2 + Math.random() * 6 + 'px';
+      document.body.appendChild(flake);
+    }
+  </script>
+</body>
+</html>
